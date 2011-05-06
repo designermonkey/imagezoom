@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=us-ascii">
+
+	<title>Coordinates!</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js" type="text/javascript">
+</script>
+	<script type="text/javascript">
+	$(document).ready( function() {
+		$("#surface").click(function( e ){
+			//console.log(e);
+			var offset = $(this).offset();
+			var x = e.pageX - offset.left
+			var y = e.pageY - offset.top;
+
+			$("#x").text( x );
+			$("#y").text( y );
+
+			var new_x = x*2.3594118;
+			var new_y = y*2.3594118;
+
+			$("#new_x").text( new_x );
+			$("#new_y").text( new_y );
+
+			if($(this).hasClass('zoomed')){
+				var new_left = (1000/2)-new_x;
+				var new_top = (1000/2)-new_y;
+			}
+			else{
+				var new_left = (425/2)-new_x;
+				var new_top = (425/2)-new_y;
+			}
+
+			$("#new_left").text( new_left );
+			$("#new_top").text( new_top );
+
+			$('#surface img').animate({
+				'left': new_left,
+				'top': new_top,
+				'width': 1000,
+				'height': 1000
+			}).parent().addClass('zoomed');
+		});
+		$("#surface").mousemove(function(e){
+			var offset = $(this).offset();
+			var x = e.pageX - offset.left
+			var y = e.pageY - offset.top;
+
+			$("#livex").text( x );
+			$("#livey").text( y );
+		});
+	});
+	</script>
+	<style type="text/css" media="screen">
+	body{
+		margin: 50px;
+	}
+	#surface {
+		background-color: transparent;
+		width: 425px;
+		height: 425px;
+		overflow: hidden;
+		border: 1px solid #000;
+	}
+	#surface img {
+		position: relative;
+	}
+	</style>
+</head>
+
+<body>
+	<div id="surface">
+		<img src="map-trial.png" width="425" />
+	</div>
+	<p>X: <span id="livex"></span></p>
+	<p>Y: <span id="livey"></span></p>
+	<br />
+	<p>X: <span id="x"></span></p>
+	<p>Y: <span id="y"></span></p>
+	<br />
+	<p>new X: <span id="new_x"></span></p>
+	<p>new Y: <span id="new_y"></span></p>
+	<br />
+	<p>new left: <span id="new_left"></span></p>
+	<p>new top: <span id="new_top"></span></p>
+</body>
+</html>

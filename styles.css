@@ -1,0 +1,43 @@
+	body{
+		margin: 50px;
+		background: #444;
+	}
+	#surface {
+		background-color: transparent;
+		width: 500px;
+		height: 500px;
+		overflow: hidden;
+		border: 1px solid #000;
+		position: relative;
+	}
+	#img {
+		position: relative;
+		width: 1000px;
+		height: 1000px;
+	}
+	#img img {
+		width: 100%;
+		position: absolute;
+	}
+	.point {
+		display: block;
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		margin-left: -10px;
+		margin-top: -10px;
+		background: url(point.png) no-repeat left top;
+		text-indent: -999em;
+	}
+	a[title="point 1"] {
+		left: 70%;
+		top: 52%;
+	}
+	a[title="point 2"] {
+		left: 80%;
+		top: 77%;
+	}
+	a[title="point 3"] {
+		left: 52%;
+		top: 26%;
+	}

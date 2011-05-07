@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=us-ascii" />
+	<title>jQuery Zoomer! plugin</title>
+	<link type="text/css" rel="stylesheet" href="styles.css" media="screen" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.js" type="text/javascript"></script>
+	<script src="jquery.zoomer.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	
+		$(document).ready( function() {
+			
+			$('#img').zoomer();
+		
+		});
+		
+	</script>
+</head>
+
+<body>
+	<div id="surface">
+		<div id="img">
+			<img src="map-trial.png" alt="" />
+			<a href="#" title="point 1" class="point">Test Point text</a>
+			<a href="#" title="point 2" class="point">Test Point text</a>
+			<a href="#" title="point 3" class="point">Test Point text</a>
+		</div>
+	</div>
+</body>
+</html>
